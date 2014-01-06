@@ -1,1 +1,1 @@
-class DemoApp.Models.User extends Backbone.Model
+class App.Models.User extends Backbone.Model

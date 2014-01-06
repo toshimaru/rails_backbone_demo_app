@@ -1,1 +1,1 @@
-class DemoApp.Routers.Users extends Backbone.Router
+class App.Routers.Users extends Backbone.Router
