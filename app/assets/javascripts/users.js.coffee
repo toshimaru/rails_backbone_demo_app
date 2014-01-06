@@ -24,4 +24,10 @@ $(document).ready ->
       .fail (response) ->
         alert 'error'
 
-
+  $('#delete').on 'click', ->
+    $.ajax("/users/2.json",
+      type: 'delete'
+      ).done (response) ->
+        alert 'success'
+      .fail (response) ->
+        alert 'error'
