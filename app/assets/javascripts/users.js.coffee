@@ -4,6 +4,10 @@
 
 $(document).ready ->
   $('#show').on 'click', ->
-    console.log this
     $.getJSON "/users/1", (data) ->
       console.log data
+
+  $('#show-all').on 'click', ->
+    $.getJSON "/users", (data) ->
+      console.log data
+
