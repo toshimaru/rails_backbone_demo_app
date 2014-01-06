@@ -2,4 +2,13 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-console.log "Coffee!"
+window.DemoApp =
+  Models: {}
+  Collections: {}
+  Views: {}
+  Routers: {}
+  initialize: -> alert 'Hello from Backbone!!!!'
+
+$(document).ready ->
+  console.log "Coffee!"
+  DemoApp.initialize()
