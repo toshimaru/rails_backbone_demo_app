@@ -17,6 +17,16 @@ $(document).ready ->
     user.fetch().done ->
       console.log user.get('email')
 
+  $('#edit').on 'click', ->
+    user = new App.Models.User
+    user.url = '/users/4'
+    user.fetch().done ->
+      new_name = $('#new-name').val()
+      user.save({ name: new_name }, { patch: true }).done ->
+          alert 'success'
+        .fail ->
+          alert 'error'
+
 ### Version. 1
   $('#show-all').on 'click', ->
     $.getJSON "/users", (data) ->
