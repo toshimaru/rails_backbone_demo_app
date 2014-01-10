@@ -4,41 +4,52 @@
 
 $(document).ready ->
 
-  # TODO: save accepts success and error callbacks in the options hash,
-
   # use Collection
   $('#show-all').on 'click', ->
     users = new App.Collections.Users
-    users.fetch().done ->
-      console.log users.get 5
+    users.fetch
+      success: ->
+        console.log users.get 5
+      error: ->
+        alert 'fetch error!'
 
   # use Model
   $('#show').on 'click', ->
     user = new App.Models.User
     user.url = '/users/4'
-    user.fetch().done ->
-      console.log user.get('email')
+    user.fetch
+      success: ->
+        console.log user.get('email')
+      error: ->
+        alert 'fetch error!'
 
   # fetch data -> update data
   $('#edit').on 'click', ->
     user = new App.Models.User
     user.url = '/users/4'
-    user.fetch().done ->
-      new_name = $('#new-name').val()
-      user.save({ name: new_name }, { patch: true }).done ->
-          alert 'success'
-        .fail ->
-          alert 'error'
+    user.fetch
+      success: ->
+        new_name = $('#new-name').val()
+        user.save({ name: new_name }, { patch: true })
+          success: ->
+            alert 'success'
+          error: ->
+            alert 'error'
+      error: ->
+        alert 'fetch error!'
 
+  # create new user
   $('#create').on 'click', ->
     user = new App.Models.User
     user.url = '/users'
     new_name = $('#create-new-name').val()
-    user.save({ name: new_name, email: 'my@address.com' }, { patch: true }).done ->
+    user.save({ name: new_name, email: 'my@address.com' }, { patch: true })
+      success: ->
         alert 'success'
-      .fail ->
+      error: ->
         alert 'error'
 
+  # fetch data -> delete data
   $('#delete').on 'click', ->
     user = new App.Models.User
     user.url = '/users/6'
