@@ -4,6 +4,8 @@
 
 $(document).ready ->
 
+  # TODO: save accepts success and error callbacks in the options hash,
+
   # use Collection
   $('#show-all').on 'click', ->
     users = new App.Collections.Users
@@ -36,6 +38,19 @@ $(document).ready ->
         alert 'success'
       .fail ->
         alert 'error'
+
+  $('#delete').on 'click', ->
+    user = new App.Models.User
+    user.url = '/users/6'
+    user.fetch
+      success: ->
+        user.destroy
+          success: ->
+            alert 'success'
+          error: ->
+            alert 'error'
+      error: ->
+        alert 'fetch error'
 
 ### Version. 1
   $('#show-all').on 'click', ->
