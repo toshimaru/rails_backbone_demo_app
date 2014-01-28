@@ -4,6 +4,10 @@
 
 $(document).ready ->
 
+  appView = new App.Views.UsersIndex()
+  appView.render()
+
+### Version. 2
   # use Collection
   $('#show-all').on 'click', ->
     users = new App.Collections.Users
@@ -62,6 +66,7 @@ $(document).ready ->
             alert 'error'
       error: ->
         alert 'fetch error'
+###
 
 ### Version. 1
   $('#show-all').on 'click', ->

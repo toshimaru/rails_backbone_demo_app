@@ -1,0 +1,12 @@
+<% if @users.length: %>
+  <table>
+  <% for user in @users: %>
+    <tr>
+      <td><a href=""><%= user.name %></a></td>
+      <td><%= user.email %></td>
+    </tr>
+  <% end %>
+  </table>
+<% else: %>
+  No users
+<% end %>
