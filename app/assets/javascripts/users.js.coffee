@@ -3,9 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready ->
-
-  appView = new App.Views.UsersIndex()
-  appView.render()
+  appView = new App.Views.UsersIndex(collection: new App.Collections.Users())
 
 ### Version. 2
   # use Collection
