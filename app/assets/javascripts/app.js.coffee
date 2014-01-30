@@ -3,5 +3,3 @@ window.App =
   Collections: {}
   Views: {}
   Routers: {}
-  initialize: -> alert 'Hello from Backbone!'
-
