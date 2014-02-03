@@ -1,22 +1,17 @@
 class App.Views.UsersIndex extends Backbone.View
 
-  el: '#backbone-view'
+  el: '#data-table'
 
   template: JST['users/index']
 
-  events:
-    "click .show" : "show"
-
   initialize: ->
-    this.listenTo(this.collection, 'sync', this.render);
+    this.listenTo(this.collection, 'reset', this.addAll);
+    this.collection.fetch(reset: true)
 
-    this.collection.fetch()
+  addAll: ->
+    console.log 'addAll!'
+    this.collection.each this.addOne, this
 
-  show: (e) ->
-    e.preventDefault()
-    alert('show')
-
-  render: ->
-    # TODO: create model
-    console.log this.collection.toJSON()
-    this.$el.html this.template users: this.collection.toJSON()
+  addOne: (model) ->
+    user = new App.Views.User model: model
+    this.$el.append user.render().el;
