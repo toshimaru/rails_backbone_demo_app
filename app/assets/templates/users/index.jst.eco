@@ -3,16 +3,16 @@
   <table>
     <tr>
       <th>ID</th>
-      <th>name</th>
-      <th>email</th>
+      <th>NAME</th>
+      <th>EMAIL</th>
       <th></th>
     </tr>
   <% for user in @users: %>
     <tr>
-      <td></td>
+      <td><%= user.id %></td>
       <td><a href=""><%= user.name %></a></td>
       <td><%= user.email %></td>
-      <td><a href="">Show</a> <a href="">Edit</a> <a href="">Delete</a></td>
+      <td><a href="" class="show">Show</a> <a href="" class="edit">Edit</a> <a href="" class="delete">Delete</a></td>
     </tr>
   <% end %>
   </table>
