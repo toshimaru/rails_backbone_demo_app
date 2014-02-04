@@ -9,7 +9,6 @@ class App.Views.UsersIndex extends Backbone.View
     this.collection.fetch(reset: true)
 
   addAll: ->
-    console.log 'addAll!'
     this.collection.each this.addOne, this
 
   addOne: (model) ->
