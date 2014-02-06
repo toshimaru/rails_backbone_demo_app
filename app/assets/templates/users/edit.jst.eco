@@ -1,5 +1,3 @@
-<div id="edit-area" style="display:none;">
-  <input type="text" placeholder="name" value="" class="name"><br>
-  <input type="text" placeholder="email" value="" class="email"><br>
-  <input type="submit" value="Submit" class="submit">
-</div>
+<input type="text" placeholder="name" value="" class="name"><br>
+<input type="text" placeholder="email" value="" class="email"><br>
+<input type="submit" value="Submit" class="submit">

@@ -1,9 +1,20 @@
 class App.Views.UserEdit extends Backbone.View
 
+  el: '#edit-area2'
+
   template: JST['users/edit']
 
   events:
-    "click .delete" : "delete"
+    "blur .name" : "clear"
 
   initialize: ->
-    # this.listenTo(this.model, 'destroy', this.remove);
+    this.render()
+
+    this.$name = this.$('.name')
+    this.$name.focus()
+
+  clear: ->
+    alert 'clear'
+
+  render: ->
+    this.$el.append this.template()

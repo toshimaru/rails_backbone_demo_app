@@ -18,10 +18,12 @@ class App.Views.User extends Backbone.View
 
   edit: (e) ->
     e.preventDefault()
-    $editarea = $('#edit-area')
-    $editarea.show()
-    $editarea.find('.name').val this.model.get 'name'
-    $editarea.find('.email').val this.model.get 'email'
+    userEdit = new App.Views.UserEdit(model: this.model)
+
+  submit: (model) ->
+    console.log  model
+    model.save name: 'aaa', email: 'bbb'
+    alert 'submit'
 
   delete: (e) ->
     e.preventDefault()

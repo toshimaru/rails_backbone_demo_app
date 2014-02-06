@@ -4,9 +4,6 @@ class App.Views.UsersIndex extends Backbone.View
 
   template: JST['users/index']
 
-  events:
-    "click .submit" : "submit"
-
   initialize: ->
     this.listenTo(this.collection, 'reset', this.addAll);;
 
@@ -16,9 +13,6 @@ class App.Views.UsersIndex extends Backbone.View
 
   addAll: ->
     this.collection.each(this.addOne, this)
-
-  submit: ->
-    alert 'submit'
 
   addOne: (model) ->
     user = new App.Views.User(model: model)
