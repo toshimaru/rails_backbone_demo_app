@@ -1,17 +1,20 @@
 <h1>Listing users</h1>
 
-<div>
+<div id="user-view">
   <table id="data-table">
-    <tr>
+    <tr class="toshi">
       <th>ID</th>
       <th>NAME</th>
       <th>EMAIL</th>
       <th></th>
     </tr>
   </table>
+  <div id="edit-area" style="display:none;">
+    <input type="text" placeholder="name" value="" class="name"><br>
+    <input type="text" placeholder="email" value="" class="email"><br>
+    <input type="submit" value="Submit" class="submit">
+  </div>
 </div>
-
-<div id="edit-area"></div>
 
 <br>
 

@@ -1,16 +1,25 @@
 class App.Views.UsersIndex extends Backbone.View
 
-  el: '#data-table'
+  el: '#user-view'
 
   template: JST['users/index']
 
+  events:
+    "click .submit" : "submit"
+
   initialize: ->
-    this.listenTo(this.collection, 'reset', this.addAll);
+    this.listenTo(this.collection, 'reset', this.addAll);;
+
+    this.$table = this.$('#data-table')
+
     this.collection.fetch(reset: true)
 
   addAll: ->
-    this.collection.each this.addOne, this
+    this.collection.each(this.addOne, this)
+
+  submit: ->
+    alert 'submit'
 
   addOne: (model) ->
-    user = new App.Views.User model: model
-    this.$el.append user.render().el;
+    user = new App.Views.User(model: model)
+    this.$table.append user.render().el
