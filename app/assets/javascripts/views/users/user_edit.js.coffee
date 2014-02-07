@@ -5,16 +5,24 @@ class App.Views.UserEdit extends Backbone.View
   template: JST['users/edit']
 
   events:
-    "blur .name" : "clear"
+    "click .submit" : "submit"
 
   initialize: ->
     this.render()
 
     this.$name = this.$('.name')
+    this.$email = this.$('.email')
     this.$name.focus()
 
-  clear: ->
-    alert 'clear'
+  submit: (e) ->
+    e.preventDefault()
+
+    this.model.save
+      name: this.$name.val()
+      email: this.$email.val()
+
+    this.$el.hide()
 
   render: ->
-    this.$el.append this.template()
+    this.$el.show()
+    this.$el.html this.template(this.model.toJSON())

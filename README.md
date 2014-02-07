@@ -9,6 +9,7 @@
 
 ## TODO
 
+* Use router
 * Separate JS and Ruby code into rails and grunt.
 
 ## README

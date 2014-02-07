@@ -5,8 +5,7 @@ class App.Views.UsersIndex extends Backbone.View
   template: JST['users/index']
 
   initialize: ->
-    this.listenTo(this.collection, 'reset', this.addAll);;
-
+    this.listenTo(this.collection, 'reset', this.addAll)
     this.$table = this.$('#data-table')
 
     this.collection.fetch(reset: true)
