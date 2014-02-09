@@ -6,6 +6,7 @@ class App.Views.UserEdit extends Backbone.View
 
   events:
     "click .submit" : "submit"
+    "keypress input" : "submitOnEnter"
 
   initialize: ->
     this.render()
@@ -13,6 +14,10 @@ class App.Views.UserEdit extends Backbone.View
     this.$name = this.$('.name')
     this.$email = this.$('.email')
     this.$name.focus()
+
+  submitOnEnter: (e) ->
+    if e.which == ENTER_KEY
+      this.submit(e)
 
   submit: (e) ->
     e.preventDefault()
