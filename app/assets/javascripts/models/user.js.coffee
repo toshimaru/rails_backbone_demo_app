@@ -1,4 +1,7 @@
 class App.Models.User extends Backbone.Model
+
+  urlRoot: '/users'
+
   defaults:
     name: 'no name',
     email: 'default email'

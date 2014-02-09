@@ -5,17 +5,12 @@ class App.Views.User extends Backbone.View
   template: JST['users/user']
 
   events:
-    "click .show" : "show"
     "click .edit" : "edit"
     "click .delete" : "delete"
 
   initialize: ->
     this.listenTo(this.model, 'destroy', this.remove);
     this.listenTo(this.model, 'change', this.render);
-
-  show: (e) ->
-    e.preventDefault()
-    alert this.model.info()
 
   edit: (e) ->
     e.preventDefault()

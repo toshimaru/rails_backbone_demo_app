@@ -16,8 +16,6 @@ class App.Views.UsersIndex extends Backbone.View
     this.$name = this.$('.name')
     this.$email = this.$('.email')
 
-    this.collection.fetch(reset: true)
-
   newOnEnter: (e) ->
     if e.which == ENTER_KEY
       this.new(e)

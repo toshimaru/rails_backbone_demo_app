@@ -2,7 +2,7 @@
 <td><a href="#"><%= this.name %></a></td>
 <td><%= this.email %></td>
 <td>
-  <a href="#" class="show">Show</a>
+  <a href="#users/<%= this.id %>" class="show">Show</a>
   <a href="#" class="edit">Edit</a>
   <a href="#" class="delete">Delete</a>
 </td>
