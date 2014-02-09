@@ -6,6 +6,7 @@ class App.Views.UsersIndex extends Backbone.View
 
   events:
     "click .submit" : "new"
+    "keypress input" : "newOnEnter"
 
   initialize: ->
     this.listenTo(this.collection, 'add', this.addOne)
@@ -16,6 +17,10 @@ class App.Views.UsersIndex extends Backbone.View
     this.$email = this.$('.email')
 
     this.collection.fetch(reset: true)
+
+  newOnEnter: (e) ->
+    if e.which == ENTER_KEY
+      this.new(e)
 
   new: (e) ->
     e.preventDefault()
