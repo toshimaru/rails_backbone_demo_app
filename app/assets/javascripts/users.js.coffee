@@ -3,4 +3,5 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready ->
-  appView = new App.Views.UsersIndex(collection: new App.Collections.Users())
+  appRouter = new App.Routers.Users()
+  appRouter.start()
