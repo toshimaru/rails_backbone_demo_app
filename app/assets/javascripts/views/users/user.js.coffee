@@ -19,7 +19,6 @@ class App.Views.User extends Backbone.View
 
   edit: (e) ->
     e.preventDefault()
-    console.log this.model
     userEdit = new App.Views.UserEdit(model: this.model)
 
   delete: (e) ->
