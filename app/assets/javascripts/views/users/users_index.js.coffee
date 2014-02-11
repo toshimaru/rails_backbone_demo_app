@@ -9,30 +9,30 @@ class App.Views.UsersIndex extends Backbone.View
     "keypress input" : "newOnEnter"
 
   initialize: ->
-    this.listenTo(this.collection, 'add', this.addOne)
-    this.listenTo(this.collection, 'reset', this.addAll)
+    @listenTo(@collection, 'add', @addOne)
+    @listenTo(@collection, 'reset', @addAll)
 
-    this.$table = this.$('#data-table')
-    this.$name = this.$('.name')
-    this.$email = this.$('.email')
+    @$table = @$('#data-table')
+    @$name = @$('.name')
+    @$email = @$('.email')
 
   newOnEnter: (e) ->
     if e.which == ENTER_KEY
-      this.new(e)
+      @new(e)
 
   new: (e) ->
     e.preventDefault()
 
-    this.collection.create
-      name: this.$name.val()
-      email: this.$email.val()
+    @collection.create
+      name: @$name.val()
+      email: @$email.val()
 
-    this.$name.val ''
-    this.$email.val ''
+    @$name.val ''
+    @$email.val ''
 
   addAll: ->
-    this.collection.each(this.addOne, this)
+    @collection.each(@addOne, @)
 
   addOne: (model) ->
     user = new App.Views.User(model: model)
-    this.$table.append user.render().el
+    @$table.append user.render().el

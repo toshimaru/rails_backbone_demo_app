@@ -7,4 +7,4 @@ class App.Models.User extends Backbone.Model
     email: 'default email'
 
   info: ->
-    return "id:#{this.get('id')}, name:#{this.get('name')}, email:#{this.get('email')}"
+    return "id:#{@get('id')}, name:#{@get('name')}, email:#{@get('email')}"

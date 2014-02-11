@@ -9,25 +9,25 @@ class App.Views.UserEdit extends Backbone.View
     "keypress input" : "submitOnEnter"
 
   initialize: ->
-    this.render()
+    @render()
 
-    this.$name = this.$('.name')
-    this.$email = this.$('.email')
-    this.$name.focus()
+    @$name = @$('.name')
+    @$email = @$('.email')
+    @$name.focus()
 
   submitOnEnter: (e) ->
     if e.which == ENTER_KEY
-      this.submit(e)
+      @submit(e)
 
   submit: (e) ->
     e.preventDefault()
 
-    this.model.save
-      name: this.$name.val()
-      email: this.$email.val()
+    @model.save
+      name: @$name.val()
+      email: @$email.val()
 
-    this.$el.hide()
+    @$el.hide()
 
   render: ->
-    this.$el.show()
-    this.$el.html this.template(this.model.toJSON())
+    @$el.show()
+    @$el.html @template(@model.toJSON())

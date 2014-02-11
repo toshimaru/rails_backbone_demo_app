@@ -9,17 +9,17 @@ class App.Views.User extends Backbone.View
     "click .delete" : "delete"
 
   initialize: ->
-    this.listenTo(this.model, 'destroy', this.remove);
-    this.listenTo(this.model, 'change', this.render);
+    @listenTo(@model, 'destroy', @remove);
+    @listenTo(@model, 'change', @render);
 
   edit: (e) ->
     e.preventDefault()
-    userEdit = new App.Views.UserEdit(model: this.model)
+    userEdit = new App.Views.UserEdit(model: @model)
 
   delete: (e) ->
     e.preventDefault()
-    this.model.destroy() if confirm 'Are you sure to delete?'
+    @model.destroy() if confirm 'Are you sure to delete?'
 
   render: ->
-    this.$el.html this.template(this.model.toJSON())
-    return this
+    @$el.html @template(@model.toJSON())
+    return @

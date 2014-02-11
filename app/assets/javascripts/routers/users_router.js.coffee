@@ -4,9 +4,9 @@ class App.Routers.Users extends Backbone.Router
     "users/:id": "show"
 
   initialize: ->
-    this.collection = new App.Collections.Users()
-    new App.Views.UsersIndex(collection: this.collection)
-    this.collection.fetch(reset: true)
+    @collection = new App.Collections.Users()
+    new App.Views.UsersIndex(collection: @collection)
+    @collection.fetch(reset: true)
 
   index: ->
     # ...
@@ -15,13 +15,13 @@ class App.Routers.Users extends Backbone.Router
     Backbone.history.start()
 
   show: (id) ->
-    if this.collection.length > 0
-      model = this.collection.get id
+    if @collection.length > 0
+      model = @collection.get id
       alert model.info()
     else
-      this.user = new App.Models.User(id: id)
-      this.listenTo(this.user, 'sync', this.showOne)
-      this.user.fetch()
+      @user = new App.Models.User(id: id)
+      @listenTo(@user, 'sync', @showOne)
+      @user.fetch()
 
   showOne: ->
-    alert this.user.info()
+    alert @user.info()
