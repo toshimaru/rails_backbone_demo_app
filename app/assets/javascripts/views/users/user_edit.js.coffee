@@ -1,6 +1,6 @@
 class App.Views.UserEdit extends Backbone.View
 
-  el: '#edit-area2'
+  el: '#edit-area'
 
   template: JST['users/edit']
 
@@ -9,11 +9,6 @@ class App.Views.UserEdit extends Backbone.View
     "keypress input" : "submitOnEnter"
 
   initialize: ->
-    @render()
-
-    @$name = @$('.name')
-    @$email = @$('.email')
-    @$name.focus()
 
   submitOnEnter: (e) ->
     if e.which == ENTER_KEY
@@ -28,6 +23,12 @@ class App.Views.UserEdit extends Backbone.View
 
     @$el.hide()
 
-  render: ->
+  render: (model) ->
+    @model = model
+
     @$el.show()
     @$el.html @template(@model.toJSON())
+
+    @$name = @$('.name')
+    @$email = @$('.email')
+    @$name.focus()

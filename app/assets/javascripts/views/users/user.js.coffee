@@ -8,13 +8,15 @@ class App.Views.User extends Backbone.View
     "click .edit" : "edit"
     "click .delete" : "delete"
 
-  initialize: ->
+  initialize: (options) ->
     @listenTo(@model, 'destroy', @remove);
     @listenTo(@model, 'change', @render);
 
+    @editView = options.editView
+
   edit: (e) ->
     e.preventDefault()
-    userEdit = new App.Views.UserEdit(model: @model)
+    @editView.render @model
 
   delete: (e) ->
     e.preventDefault()
