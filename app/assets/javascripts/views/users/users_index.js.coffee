@@ -12,8 +12,6 @@ class App.Views.UsersIndex extends Backbone.View
     @listenTo(@collection, 'add', @addOne)
     @listenTo(@collection, 'reset', @addAll)
 
-    @editView = new App.Views.UserEdit()
-
     @$table = @$('#data-table')
     @$name = @$('.name')
     @$email = @$('.email')
@@ -39,5 +37,5 @@ class App.Views.UsersIndex extends Backbone.View
     @collection.each(@addOne, @)
 
   addOne: (model) ->
-    user = new App.Views.User(model: model, editView: @editView)
+    user = new App.Views.User(model: model)
     @$table.append user.render().el

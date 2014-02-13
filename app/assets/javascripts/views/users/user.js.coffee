@@ -5,18 +5,11 @@ class App.Views.User extends Backbone.View
   template: JST['users/user']
 
   events:
-    "click .edit" : "edit"
     "click .delete" : "delete"
 
-  initialize: (options) ->
+  initialize: ->
     @listenTo(@model, 'destroy', @remove);
     @listenTo(@model, 'change', @render);
-
-    @editView = options.editView
-
-  edit: (e) ->
-    e.preventDefault()
-    @editView.render @model
 
   delete: (e) ->
     e.preventDefault()

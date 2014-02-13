@@ -3,6 +3,6 @@
 <td><%= this.email %></td>
 <td>
   <a href="#users/<%= this.id %>" class="show">Show</a>
-  <a href="#" class="edit">Edit</a>
+  <a href="#users/<%= this.id %>/edit" class="edit">Edit</a>
   <a href="#" class="delete">Delete</a>
 </td>
