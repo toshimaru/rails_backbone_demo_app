@@ -25,6 +25,7 @@ class App.Views.UserEdit extends Backbone.View
 
   render: (model) ->
     @model = model
+    @listenTo(@model, 'destroy', @remove);
 
     @$el.show()
     @$el.html @template(@model.toJSON())
