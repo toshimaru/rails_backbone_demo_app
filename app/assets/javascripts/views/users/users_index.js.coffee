@@ -32,6 +32,7 @@ class App.Views.UsersIndex extends Backbone.View
   resetInput: ->
     @$name.val ''
     @$email.val ''
+    @$name.focus()
 
   addAll: ->
     @collection.each(@addOne, @)
