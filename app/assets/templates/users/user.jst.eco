@@ -4,5 +4,5 @@
 <td>
   <a href="#users/<%= this.id %>" class="show">Show</a>
   <a href="#users/<%= this.id %>/edit" class="edit">Edit</a>
-  <a href="#" class="delete">Delete</a>
+  <a href="#users/<%= this.id %>/delete" class="delete">Delete</a>
 </td>

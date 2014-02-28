@@ -4,6 +4,7 @@ class App.Routers.Users extends Backbone.Router
     "": "index",
     "users/:id": "show"
     "users/:id/edit": "edit"
+    "users/:id/delete": "delete"
 
   initialize: ->
     @edit_view = new App.Views.UserEdit()
@@ -37,3 +38,7 @@ class App.Routers.Users extends Backbone.Router
   editOne: ->
     model = @collection.get @id
     @edit_view.render model
+
+  delete: (id) ->
+    @collection.get(id).destroy() if confirm 'Are you sure to delete?'
+    @navigate ''

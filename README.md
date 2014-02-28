@@ -14,3 +14,4 @@ And then, access to <http://localhost:3000/users>
 ## TODO
 
 * Separate JS and Ruby code into rails and grunt.
+* Make a TODO-app version
