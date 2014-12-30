@@ -1,7 +1,7 @@
 class App.Routers.Users extends Backbone.Router
 
   routes:
-    "": "index",
+    "": "index"
     "users/:id": "show"
     "users/:id/edit": "edit"
     "users/:id/delete": "delete"
