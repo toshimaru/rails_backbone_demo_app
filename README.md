@@ -1,3 +1,5 @@
+[![Dependency Status](https://gemnasium.com/toshimaru/rails_backbone_demo_app.svg)](https://gemnasium.com/toshimaru/rails_backbone_demo_app)
+
 ## Resources
 
 * [Ruby on Rails Tutorial](http://ruby.railstutorial.org/chapters/a-demo-app#top)
@@ -7,7 +9,7 @@
 
     $ bundle install
     $ rake db:create
-    $ rails s
+    $ bundle exec rails s
 
 And then, access to <http://localhost:3000/users>
 
