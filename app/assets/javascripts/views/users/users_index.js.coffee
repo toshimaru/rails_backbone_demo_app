@@ -26,6 +26,7 @@ class App.Views.UsersIndex extends Backbone.View
     @collection.create
       name: @$name.val()
       email: @$email.val()
+      { wait: true }
 
     @resetInput()
 
