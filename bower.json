@@ -16,6 +16,6 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "~2.1.3"
+    "marionette": "~2.3.0"
   }
 }
