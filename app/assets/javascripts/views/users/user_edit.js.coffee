@@ -2,7 +2,11 @@ class App.Views.UserEdit extends Backbone.View
 
   el: '#edit-area'
 
-  template: JST['users/edit']
+  template: _.template '''
+<input type="text" placeholder="name" value="<%= name %>" class="name"><br>
+<input type="text" placeholder="email" value="<%= email %>" class="email"><br>
+<input type="submit" value="Submit" class="submit">
+'''
 
   events:
     "click .submit" : "submit"
@@ -24,6 +28,7 @@ class App.Views.UserEdit extends Backbone.View
     @$el.hide()
 
   render: (model) ->
+    console.log @template
     @model = model
     @listenTo(@model, 'destroy', @remove);
 

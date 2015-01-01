@@ -2,7 +2,7 @@ class App.Views.UsersIndex extends Backbone.View
 
   el: '#user-view'
 
-  template: JST['users/index']
+  template: _.template ''
 
   events:
     "click .submit" : "new"
