@@ -28,7 +28,6 @@ class App.Views.UserEdit extends Backbone.View
     @$el.hide()
 
   render: (model) ->
-    console.log @template
     @model = model
     @listenTo(@model, 'destroy', @remove);
 

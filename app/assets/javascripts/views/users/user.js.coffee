@@ -18,6 +18,5 @@ class App.Views.User extends Backbone.View
     @listenTo(@model, 'change', @render);
 
   render: ->
-    console.log @template
     @$el.html @template(@model.toJSON())
     return @
