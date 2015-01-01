@@ -16,6 +16,7 @@
     "tests"
   ],
   "dependencies": {
-    "marionette": "~2.3.0"
+    "marionette": "~2.3.0",
+    "mustache": "~0.8.2"
   }
 }

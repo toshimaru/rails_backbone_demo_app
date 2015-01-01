@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require underscore/underscore
 //= require backbone/backbone
+//= require mustache/mustache
 //= require app
 //= require_tree ./models
 //= require_tree ./collections
