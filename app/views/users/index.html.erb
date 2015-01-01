@@ -25,3 +25,14 @@
   <input type="text" placeholder="email" value="{{ email }}" class="email"><br>
   <input type="submit" value="Submit" class="submit">
 </script>
+
+<script id="userdata-template" type="x-tmpl-mustache">
+  <td>{{ id }}</td>
+  <td>{{ name }}</td>
+  <td>{{ email }}</td>
+  <td>
+    <a href="#users/{{ id }}" class="show">Show</a>
+    <a href="#users/{{ id }}/edit" class="edit">Edit</a>
+    <a href="#users/{{ id }}/delete" class="delete">Delete</a>
+  </td>
+</script>
