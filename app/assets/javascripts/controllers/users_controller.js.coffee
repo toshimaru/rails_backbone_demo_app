@@ -1,19 +1,14 @@
-class App.Routers.Users extends Backbone.Router
+class App.Controllers.Users extends Backbone.Marionette.Controller
 
-  routes:
-    "": "index"
-    "users/:id": "show"
-    "users/:id/edit": "edit"
-    "users/:id/delete": "delete"
-
-  initialize: ->
+  constructor: ->
     @edit_view = new App.Views.UserEdit()
     @collection = new App.Collections.Users()
     @user_index_view = new App.Views.UsersIndex(collection: @collection)
     @collection.fetch(reset: true)
-
-  start: ->
     Backbone.history.start()
+
+  index: ->
+    console.log "index"
 
   show: (id) ->
     if @collection.length > 0
@@ -41,4 +36,4 @@ class App.Routers.Users extends Backbone.Router
 
   delete: (id) ->
     @collection.get(id).destroy() if confirm 'Are you sure to delete?'
-    @navigate ''
+    Backbone.history.navigate ''
