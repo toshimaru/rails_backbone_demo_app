@@ -5,3 +5,4 @@ window.App =
   Collections: {}
   Views: {}
   Routers: {}
+  Controllers: {}
