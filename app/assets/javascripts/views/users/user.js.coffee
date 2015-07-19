@@ -2,12 +2,12 @@ class App.Views.User extends Backbone.View
 
   tagName: 'tr'
 
-  template: JST['users/user']
+  template: $('#userdata-template').html()
 
   initialize: ->
     @listenTo(@model, 'destroy', @remove);
     @listenTo(@model, 'change', @render);
 
   render: ->
-    @$el.html @template(@model.toJSON())
+    @$el.html Mustache.render(@template, @model.toJSON())
     return @

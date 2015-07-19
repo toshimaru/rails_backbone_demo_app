@@ -2,7 +2,7 @@ class App.Views.UserEdit extends Backbone.View
 
   el: '#edit-area'
 
-  template: JST['users/edit']
+  template: $('#edit-template').html()
 
   events:
     "click .submit" : "submit"
@@ -28,7 +28,7 @@ class App.Views.UserEdit extends Backbone.View
     @listenTo(@model, 'destroy', @remove);
 
     @$el.show()
-    @$el.html @template(@model.toJSON())
+    @$el.html Mustache.render(@template, @model.toJSON())
 
     @$name = @$('.name')
     @$email = @$('.email')

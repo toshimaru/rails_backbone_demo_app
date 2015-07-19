@@ -3,5 +3,15 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready ->
-  appRouter = new App.Routers.Users()
-  appRouter.start()
+  new App.Routers.Users(controller: new App.Controllers.Users())
+
+# Marionette start
+  # UserApp = new Backbone.Marionette.Application()
+  # UserApp.addRegions
+  #   'header': 'header'
+  #   'main':   '#main'
+  #   'footer': 'footer'
+  #
+  # UserApp.on 'start', ->
+  #   alert "started!"
+# Marionette end

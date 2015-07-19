@@ -1,3 +1,0 @@
-<input type="text" placeholder="name" value="<%= this.name %>" class="name"><br>
-<input type="text" placeholder="email" value="<%= this.email %>" class="email"><br>
-<input type="submit" value="Submit" class="submit">

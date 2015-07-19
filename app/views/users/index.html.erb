@@ -18,3 +18,21 @@
 </div>
 
 <div id="edit-area"></div>
+
+
+<script id="edit-template" type="x-tmpl-mustache">
+  <input type="text" placeholder="name" value="{{ name }}" class="name"><br>
+  <input type="text" placeholder="email" value="{{ email }}" class="email"><br>
+  <input type="submit" value="Submit" class="submit">
+</script>
+
+<script id="userdata-template" type="x-tmpl-mustache">
+  <td>{{ id }}</td>
+  <td>{{ name }}</td>
+  <td>{{ email }}</td>
+  <td>
+    <a href="#{{ id }}" class="show">Show</a>
+    <a href="#{{ id }}/edit" class="edit">Edit</a>
+    <a href="#{{ id }}/delete" class="delete">Delete</a>
+  </td>
+</script>
